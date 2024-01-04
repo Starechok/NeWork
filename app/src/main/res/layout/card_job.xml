@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_job"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/common_spacing"
+    app:cardCornerRadius="@dimen/common_spacing"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/common_spacing">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/job_menu"
+            style="@style/Widget.AppTheme.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/common_spacing"
+            android:layout_marginEnd="@dimen/common_spacing"
+            android:contentDescription="@string/description_post_menu"
+            app:icon="@drawable/ic_more_vert_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/job_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_spacing"
+            android:layout_marginTop="@dimen/common_spacing"
+            android:text="@string/text_job_name"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/job_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_spacing"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/job_name_label"
+            app:layout_constraintStart_toEndOf="@+id/job_name_label"
+            tools:text="Netology" />
+
+        <TextView
+            android:id="@+id/job_position_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_spacing"
+            android:text="@string/text_job_position"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="@+id/job_name_label"
+            app:layout_constraintTop_toBottomOf="@id/job_name_label" />
+
+        <TextView
+            android:id="@+id/job_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_spacing"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/job_position_label"
+            app:layout_constraintStart_toEndOf="@+id/job_position_label"
+            tools:text="Student" />
+
+        <TextView
+            android:id="@+id/job_start_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_spacing"
+            android:text="@string/text_job_start"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="@+id/job_name_label"
+            app:layout_constraintTop_toBottomOf="@id/job_position_label" />
+
+        <TextView
+            android:id="@+id/job_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_spacing"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/job_start_label"
+            app:layout_constraintStart_toEndOf="@+id/job_start_label"
+            tools:text="2021-11" />
+
+        <TextView
+            android:id="@+id/job_finish_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_spacing"
+            android:text="@string/text_job_finish"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="@+id/job_name_label"
+            app:layout_constraintTop_toBottomOf="@id/job_start_label" />
+
+        <TextView
+            android:id="@+id/job_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_spacing"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/job_finish_label"
+            app:layout_constraintStart_toEndOf="@+id/job_finish_label"
+            tools:text="2023-03" />
+
+        <TextView
+            android:id="@+id/job_link_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_spacing"
+            android:text="@string/text_job_link"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="@+id/job_name_label"
+            app:layout_constraintTop_toBottomOf="@id/job_finish_label" />
+
+        <TextView
+            android:id="@+id/job_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:padding="@dimen/common_spacing"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/job_link_label"
+            app:layout_constraintStart_toEndOf="@+id/job_link_label"
+            tools:text="https://netology.ru" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

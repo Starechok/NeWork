@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/postsFragment"
+        android:enabled="true"
+        android:icon="@drawable/baseline_library_books_24"
+        android:title="@string/title_posts" />
+
+    <item
+        android:id="@+id/eventsFragment"
+        android:enabled="true"
+        android:icon="@drawable/baseline_event_note_24"
+        android:title="@string/title_events" />
+    <item
+        android:id="@+id/usersFragment"
+        android:enabled="true"
+        android:icon="@drawable/baseline_supervisor_account_24"
+        android:title="@string/title_users" />
+    <item
+        android:id="@+id/myProfileFragment"
+        android:enabled="true"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="@string/title_profile" />
+</menu>

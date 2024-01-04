@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_event"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/common_spacing"
+    app:cardCornerRadius="@dimen/common_spacing"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/common_spacing">
+
+        <ImageView
+            android:id="@+id/event_author_avatar"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/common_spacing"
+            android:contentDescription="@string/description_author_avatar"
+            app:layout_constraintBottom_toBottomOf="@id/event_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@sample/posts.json/data/authorAvatar" />
+
+        <TextView
+            android:id="@+id/event_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/common_spacing"
+            android:layout_marginEnd="@dimen/common_spacing"
+            android:ellipsize="end"
+            android:singleLine="true"
+            app:layout_constraintBottom_toTopOf="@+id/event_published"
+            app:layout_constraintEnd_toStartOf="@id/event_menu"
+            app:layout_constraintStart_toEndOf="@id/event_author_avatar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="@sample/posts.json/data/author" />
+
+        <TextView
+            android:id="@+id/event_published"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_spacing"
+            android:layout_marginEnd="@dimen/common_spacing"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="@+id/event_header"
+            app:layout_constraintEnd_toStartOf="@+id/event_menu"
+            app:layout_constraintStart_toEndOf="@+id/event_author_avatar"
+            app:layout_constraintTop_toBottomOf="@id/event_author"
+            tools:text="@sample/posts.json/data/published" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/event_menu"
+            style="@style/Widget.AppTheme.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/common_spacing"
+            android:contentDescription="@string/description_event_menu"
+            app:icon="@drawable/ic_more_vert_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/event_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="event_author_avatar, event_published, event_menu" />
+
+        <TextView
+            android:id="@+id/event_datetime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_spacing"
+            android:layout_marginTop="@dimen/common_spacing"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/event_header"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+        <TextView
+            android:id="@+id/event_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_spacing"
+            android:layout_marginTop="@dimen/common_spacing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/event_datetime"
+            tools:text="ONLINE" />
+
+        <TextView
+            android:id="@+id/event_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:lineSpacingMultiplier="1.5"
+            android:paddingTop="@dimen/common_spacing"
+            android:paddingBottom="@dimen/common_spacing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/event_type"
+            tools:text="@sample/posts.json/data/content" />
+
+        <ImageView
+            android:id="@+id/event_attachment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_spacing"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/description_attachment"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_content"
+            tools:layout_height="96dp"
+            tools:layout_width="96dp"
+            tools:srcCompat="@sample/posts.json/data/authorAvatar"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/play_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_play_circle_24"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/event_attachment"
+            app:layout_constraintEnd_toEndOf="@id/event_attachment"
+            app:layout_constraintStart_toStartOf="@id/event_attachment"
+            app:layout_constraintTop_toTopOf="@id/event_attachment"
+            tools:visibility="visible"
+            android:importantForAccessibility="no" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/event_footer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="@dimen/common_spacing"
+            app:constraint_referenced_ids="event_attachment" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/event_like"
+            style="@style/Widget.AppTheme.LikeCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:contentDescription="@string/description_event_like"
+            app:icon="@drawable/ic_like_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/event_footer"
+            tools:checked="@sample/posts.json/data/likedByMe"
+            tools:text="@sample/posts.json/data/likes" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/event_participate"
+            style="@style/Widget.AppTheme.ParticipateCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_spacing"
+            android:checkable="true"
+            android:contentDescription="@string/description_event_participate"
+            app:icon="@drawable/baseline_group_24"
+            app:layout_constraintStart_toEndOf="@+id/event_like"
+            app:layout_constraintTop_toBottomOf="@id/event_footer"
+            tools:text="@sample/posts.json/data/likes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
